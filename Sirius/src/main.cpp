@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include <string>
 
 #include "attacks.h"
@@ -27,7 +28,12 @@ int main(int argc, char** argv)
 
     if (argc > 2 && std::string(argv[1]) == "datastats")
     {
-        datagen::computeStats(std::string(argv[2]));
+        const auto lineLimit = argc > 3
+            ? atoi(argv[3])
+            : std::numeric_limits<int>::max();
+
+        datagen::computeStats(std::string(argv[2]), lineLimit);
+
         return 0;
     }
 

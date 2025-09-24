@@ -6,6 +6,6 @@
 namespace datagen
 {
 
-void computeStats(std::string fensFile);
+void computeStats(std::string fensFile, int fensCount);
 
 }

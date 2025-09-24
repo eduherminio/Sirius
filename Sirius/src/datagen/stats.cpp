@@ -6,7 +6,7 @@
 namespace datagen
 {
 
-void computeStats(std::string fensFile)
+void computeStats(std::string fensFile, int fensCount)
 {
     std::ifstream file(fensFile);
     std::string line;
@@ -16,7 +16,8 @@ void computeStats(std::string fensFile)
     std::array<uint32_t, 17> pawnCounts = {};
     std::array<std::array<uint32_t, 17>, 25> pawnPhaseCounts = {};
 
-    while (std::getline(file, line))
+    int lineCount = 0;
+    while (lineCount++ < fensCount && std::getline(file, line))
     {
         int phase = 0;
         int pawnCount = 0;
