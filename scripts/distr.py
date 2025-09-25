@@ -35,21 +35,21 @@ if __name__ == "__main__":
     plt.xlabel("Pieces")
     plt.ylabel("Count")
     plt.xticks(range(0, 33, 2))
-    plt.show()
+    plt.savefig("piece_count.jpg")
 
     plt.figure(figsize=(10, 4))
     plt.bar(range(0, 25), phase_counts)
     plt.xlabel("Phase")
     plt.ylabel("Count")
     plt.xticks(range(0, 25, 2))
-    plt.show()
+    plt.savefig("phase_count.jpg")
 
     plt.figure(figsize=(10, 4))
     plt.bar(range(0, 17), pawn_counts)
     plt.xlabel("Pawns")
     plt.ylabel("Count")
     plt.xticks(range(0, 17, 2))
-    plt.show()
+    plt.savefig("pawn_count.jpg")
 
     for phase in range(0, 25, 5):
         # ax5 not needed
@@ -65,4 +65,4 @@ if __name__ == "__main__":
         # plt.ylabel(f"Count (phase {phase})")
         # plt.xticks(range(0, 9))
         plt.subplots_adjust(wspace=0.5, hspace=0.5)
-        plt.show()
+        plt.savefig("phase_" + str(phase) + ".jpg")
